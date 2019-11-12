@@ -1,5 +1,3 @@
-package LinkedLists;
-
 public class MiddleElementLinkedList {
     public static void main(String[] args) {
         ListNode nodeOne = new ListNode(1);

@@ -1,5 +1,3 @@
-package LinkedLists;
-
 public class LongestSubstring {
     public String longestSubstring(String inputString) {
 

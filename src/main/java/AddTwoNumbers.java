@@ -1,5 +1,3 @@
-package LinkedLists;
-
 import java.math.BigInteger;
 
 class ListNode {
@@ -21,8 +19,7 @@ public class AddTwoNumbers {
     }
 
     private ListNode buildLinkedList(BigInteger sum) {
-        if (sum.equals(BigInteger.valueOf(0)))
-            return new ListNode(0);
+        if (sum.equals(BigInteger.valueOf(0))) return new ListNode(0);
 
         ListNode startNode = null;
         ListNode currentNode = null;
@@ -73,7 +70,7 @@ public class AddTwoNumbers {
             if (q != null) q = q.next;
         }
 
-        if(carry > 0){
+        if (carry > 0) {
             curr.next = new ListNode(carry);
         }
         return dummyHead.next;
