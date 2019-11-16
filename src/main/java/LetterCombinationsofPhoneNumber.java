@@ -4,10 +4,20 @@ Given a string containing digits from 2-9 inclusive, return all possible letter 
 A mapping of digit to letters (just like on the telephone buttons) is given below.
  Note that 1 does not map to any letters.
  */
+/*
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations
+ that the number could represent.
+A mapping of digit to letters (just like on the telephone buttons) is given below.
+ Note that 1 does not map to any letters.
+ */
+
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 
 public class LetterCombinationsofPhoneNumber {
@@ -46,15 +56,44 @@ public class LetterCombinationsofPhoneNumber {
     }
 
     public List<String> letterCombinations(String digits) {
-        if (digits.length() != 0)
+        if (digits.length() != 0) {
             backtrack("", digits);
+        }
         return output;
+    }
+
+    public List<String> letterCombinations2(String digits) {
+        Queue<String> queue = new ArrayDeque<>();
+
+        if (digits.length() == 0) {
+            return new ArrayList<>(queue);
+        }
+        queue.add("");
+
+        String[] charMap = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+
+        for (int i = 0; i < digits.length(); i++) {
+            int index = Character.getNumericValue(digits.charAt(i));
+
+            while (queue.peek().length() == i) {
+                String permutation = queue.remove();
+                for (char c : charMap[index].toCharArray()) {
+                    queue.add(permutation + c);
+                }
+            }
+        }
+
+        return new ArrayList<>(queue);
     }
 
     public static void main(String[] args) {
         LetterCombinationsofPhoneNumber letterCombinationsofPhoneNumber = new LetterCombinationsofPhoneNumber();
-        List<String> combinations = letterCombinationsofPhoneNumber.letterCombinations("23");
+        List<String> combinations = letterCombinationsofPhoneNumber.letterCombinations("234");
         System.out.println("combinations = " + combinations);
-        ;
+        List<String> strings = letterCombinationsofPhoneNumber.letterCombinations2("234");
+        System.out.println("strings = " + strings);
+        System.out.println(combinations.equals(strings));
     }
+
+
 }
