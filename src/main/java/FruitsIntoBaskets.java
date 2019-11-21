@@ -20,13 +20,10 @@ public class FruitsIntoBaskets {
                 lastFruitCount += 1;
             } else {
                 lastFruitCount = 1;
-            }
-
-            if (fruit != lastFruit) {
                 secondLastFruit = lastFruit;
                 lastFruit = fruit;
             }
-
+            
             max = Math.max(max, currMax);
         }
 
