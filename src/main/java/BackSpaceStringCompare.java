@@ -47,4 +47,31 @@ public class BackSpaceStringCompare {
         return true;
         
     }
+    
+    public boolean backSpaceCompare2(String s,String t){
+        Stack<Character> sStack = new Stack<>();
+        for(char c : s.toCharArray()){
+            if(c !='#')
+                sStack.push(c);
+            else if(!sStack.isEmpty())
+                sStack.pop();
+        }
+        
+        Stack<Character> tStack = new Stack<>();
+        for(char c : t.toCharArray()){
+            if(c !='#')
+                tStack.push(c);
+            else if(!tStack.isEmpty())
+                tStack.pop();
+        }
+        
+    
+        while(!sStack.isEmpty()){
+            char c = sStack. pop();
+            if(tStack.isEmpty() || tStack.pop() != c)
+                return false;
+        }
+        
+        return sStack.isEmpty() && tStack.isEmpty();
+    }
 }
