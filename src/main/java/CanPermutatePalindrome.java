@@ -7,14 +7,14 @@ public class CanPermutatePalindrome {
             char_counts[c]++;
         }
 
-        int numOfOdd = 0;
+        int numOfCharFrqOdd = 0;
 
         for (int i = 0; i < 128; i++) {
             if (char_counts[i] % 2 == 1) {
-                numOfOdd++;
+                numOfCharFrqOdd++;
             }
         }
 
-        return numOfOdd <= 1;
+        return numOfCharFrqOdd <= 1;
     }
 }
