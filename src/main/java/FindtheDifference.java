@@ -18,7 +18,10 @@ e
 Explanation:
 'e' is the letter that was added.*/
 
-pulic class FindtheDifference {
+import java.util.HashMap;
+import java.util.Map;
+
+public class FindtheDifference {
     public char findTheDifference(String s, String t) {
         Map<Character,Integer> map = new HashMap<>();
         
@@ -31,6 +34,25 @@ pulic class FindtheDifference {
                 return c;
             else
                 map.put(c,map.get(c) -1);
+        }
+        
+        return '!';
+    }
+
+    public char findTheDifference2(String s, String t) {
+        int[] chars_count = new int[26];
+        
+        for(char c : s.toCharArray()){
+            chars_count[c - 'a'] ++;
+        }
+        
+        
+        for(char c : t.toCharArray()){
+            
+            if(chars_count[c - 'a'] == 0)
+                return c;
+            
+            chars_count[c - 'a']--;
         }
         
         return '!';
