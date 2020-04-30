@@ -9,19 +9,19 @@ import java.util.Set;
 
 public class FindAllDuplicates {
     public List<Integer> findAllDuplicates(int[] arr) {
-        Set<Integer> resultSet = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
 
-        for (int i = 0; i < arr.length; i++) {
-            int index = Math.abs(arr[i]) - 1;
+        for(int x : nums){
+            int index = Math.abs(x) - 1;
 
-            if (arr[index] < 0) {
-                resultSet.add(Math.abs(arr[i]));
-            } else {
-                arr[index] = -arr[index];
+            if(nums[index] < 0){
+                set.add(Math.abs(x));
+            }else{
+                nums[index] = -nums[index];
             }
-        }
 
-        return new ArrayList<>(resultSet);
+        }
+        return new ArrayList<>(set);
     }
 
     public static void main(String[] args) {
