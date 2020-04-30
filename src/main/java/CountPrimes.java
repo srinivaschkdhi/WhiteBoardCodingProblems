@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class CountPrimes {
     public int countPrimes(int n) {
         boolean[] primes = new boolean[n];
