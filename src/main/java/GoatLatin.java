@@ -21,7 +21,7 @@ public class GoatLatin {
                 result += word.substring(1) + firstLetter + "ma";
             }
 
-            for(int j = 0; j < wordPosInSen ; j++){//add no of as based on wordpos.
+            for(int j = 0; j < wordPosInSen ; j++){//add no of a's based on wordpos.
                 result += "a";
             }
 
