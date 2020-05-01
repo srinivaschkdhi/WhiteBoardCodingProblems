@@ -16,10 +16,39 @@ public class KeysAndRooms {
 
             List<Integer> keysInThisRoom = rooms.get(currKey); // collect keys from this room.
 
-            for (int key :
-                    keysInThisRoom) {
+            for (int key :  keysInThisRoom) {
                 if (!seen[key]) { // if room is not seen, see the room and collect keys from it.
                     seen[key] = true;
+                    collectedKeysFromVisitedRooms.add(key);
+                }
+            }
+        }
+
+        for (boolean visited : seen) {
+            if (!visited) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean canVisitAllRooms2(List<List<Integer>> rooms) {
+        boolean seen[] = new boolean[rooms.size()];
+        Stack<Integer> collectedKeysFromVisitedRooms = new Stack<>();
+        
+        collectedKeysFromVisitedRooms.add(0); // you have first room key by default
+
+        while (!collectedKeysFromVisitedRooms.isEmpty()) {
+            
+            int currKey = collectedKeysFromVisitedRooms.pop();
+            seen[currKey] = true;
+
+            List<Integer> keysInThisRoom = rooms.get(currKey); // collect keys from this room.
+
+            for (int key :  keysInThisRoom) {
+                if (!seen[key]) { // add keys to stack . to avoid repeation.to avoid going to visited room 
+                    // again dont take keys of already visited room.
                     collectedKeysFromVisitedRooms.add(key);
                 }
             }
