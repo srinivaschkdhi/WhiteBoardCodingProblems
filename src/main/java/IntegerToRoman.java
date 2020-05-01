@@ -31,7 +31,7 @@ public class IntegerToRoman {
         String romanNum = "";
 
         for (int i : bases) {
-            while (n >= i) {
+            while (n >= i) {// if n is 20 . we take x twice . that's y loop twice . 
                 romanNum += map.get(i);
                 n -= i;
             }
