@@ -3,8 +3,9 @@ public class FruitsIntoBaskets {
     public int totalFruit(int[] tree) {
         int lastFruit = -1;
         int secondLastFruit = -1;
-
         int lastFruitCount = 0;
+
+        
         int currMax = 0;
         int max = 0;
 
