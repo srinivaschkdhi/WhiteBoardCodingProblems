@@ -9,11 +9,11 @@ public class LemonadeChange {
             else if(bill == 10){
                 tens++;
                 fives--;
-            }else if(bill == 20 && tens >0){
+            }else if(bill == 20 && tens > 0){
                 tens--;
                 fives--;
             }
-            else if(bill == 20 && tens >=0)
+            else if(bill == 20 && tens == 0)
                 fives= fives - 3;
             
             if(fives < 0)
