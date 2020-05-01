@@ -10,7 +10,7 @@ public class IslandPerimeter {
                     perimeter += 4;
 
                     if (i > 0 && grid[i - 1][j] == 1) {
-                        perimeter -= 2;
+                        perimeter -= 2;//as two grids sharing common side . 1 unit of perimeter is deleted from both grids.
                     }
 
                     if (j > 0 && grid[i][j - 1] == 1) {
