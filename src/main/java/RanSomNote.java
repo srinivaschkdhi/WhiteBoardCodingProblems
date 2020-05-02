@@ -1,4 +1,7 @@
-pulic class RanSomNote {
+import java.util.HashMap;
+import java.util.Map;
+
+public class RanSomNote {
     public boolean canConstruct(String ransomNote, String magazine) {
         Map<Character,Integer> counts = new HashMap<>();
         
@@ -14,4 +17,22 @@ pulic class RanSomNote {
         }
         return true;
     }
+
+    public boolean canConstruct2(String ransomNote, String magazine) {
+            int[] char_counts = new int[26];
+
+            for(char c : magazine.toCharArray()){
+                char_counts[c - 'a']++;
+            }
+
+            for(char c : ransomNote.toCharArray())
+                char_counts[c - 'a']--;
+
+            for(int i : char_counts)
+                if(i < 0)
+                    return false;
+
+
+            return true;
+        }
 }
