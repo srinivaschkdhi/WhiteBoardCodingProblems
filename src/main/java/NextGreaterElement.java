@@ -12,7 +12,8 @@ public class NextGreaterElement {
             while (!stack.isEmpty() && num > stack.peek()) {
                 hashMap.put(stack.pop(), num);
             }
-            stack.push(num);
+         
+
         }
 
         for (int i = 0; i < nums1.length; i++) {
@@ -22,3 +23,6 @@ public class NextGreaterElement {
         return nums1;
     }
 }
+// push all nums2 elements to stack .
+// before pushing to stack check if this element can be greater than peek of stack.
+// if this element greater to any element to stack put in hashmap(pop(),this elemement.)
