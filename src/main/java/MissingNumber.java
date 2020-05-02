@@ -21,8 +21,19 @@ public class MissingNumber {
         for(int i:nums)
             sum += i;
         
-        int n = nums.length + 1;
+        int n = nums.length + 1; // as one number is missing . we add 1 and find sum of n numbers.
         
-        return n*(n-1)/2 - sum; // sum of n num is n(n+1)/2. zero should be excluded n-1(n+1-1)/2 = n(n-1)/2
+        return n*(n-1)/2 - sum; // sum of n num is n(n+1)/2. last num should be excluded n-1(n+1-1)/2 = n(n-1)/2
+    }
+
+     public int missingNumber2(int[] nums) {
+          int sum = 0;
+        for(int i:nums)
+            sum += i;
+        
+        int n = nums.length; // even though 1 num is missing. as 0 does not add value to sum .
+                                 // we can go n = nums.length; 0 == extra num.
+        
+        return n*(n + 1)/2 - sum;
     }
 }
