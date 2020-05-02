@@ -1,3 +1,13 @@
+package src;
+
+/*
+Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+
+  1.  Integers in each row are sorted from left to right.
+  2.  The first integer of each row is greater than the last integer of the previous row.
+
+    search (first method) works even for matrix which does not satisfy 2 property
+ */
 class MatrixSortedSearch {
     private static void search(int[][] mat, int n, int x) {
 
@@ -29,11 +39,11 @@ class MatrixSortedSearch {
         int columns = matrix[0].length;
 
         int low = 0;
-        int high = rows * columns - 1;
+        int high = rows * columns - 1;//*
 
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            int midElement = matrix[mid / columns][mid % columns];
+            int midElement = matrix[mid / columns][mid % columns];//*
 
             if (target == midElement) {
                 return true;
@@ -50,12 +60,14 @@ class MatrixSortedSearch {
 
     // driver program to test above function
     public static void main(String[] args) {
-        int mat[][] = {{10, 20, 30, 40},
-                {15, 25, 35, 45},
-                {27, 29, 37, 48},
-                {32, 33, 39, 50}};
+        int mat[][] = {
+                {1, 3, 5, 7},
+                {10, 11, 16, 20},
+                {23, 30, 34, 50}
+        };
 
-        search(mat, 4, 29);
+        boolean b = new MatrixSortedSearch().searchMatrix(mat, 3);
+        System.out.println("b = " + b);
     }
 
 }
