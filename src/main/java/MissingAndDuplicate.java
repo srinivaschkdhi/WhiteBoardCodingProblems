@@ -11,17 +11,20 @@ public class MissingAndDuplicate {
             return new ArrayList<>();
         }
 
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> missingValues = new ArrayList<>();
+        List<Integer> duplicateValues = new ArrayList<>();
+
         int i = 0;
         while (i < arr.length) {
-            if (arr[i] != arr[arr[i] - 1]) {
-                int otherIndex = arr[i] - 1;
-                swap(arr, i, otherIndex);
-            } else
+            if (arr[i] != arr[arr[i] - 1]) { // if element not at present at its supposed index.
+                int supposedIndex = arr[i] - 1;
+                swap(arr, i, supposedIndex); //  shift to that index. not increment i and check again with new element.
+            } else                           // since elements are swapped.
                 i++;
         }
 
-        List<Integer> missingValues = new ArrayList<>();
-        List<Integer> duplicateValues = new ArrayList<>();
+
 
         for (int j = 0; j < arr.length; j++) {
             if (j + 1 != arr[j]) {
@@ -30,7 +33,7 @@ public class MissingAndDuplicate {
             }
         }
 
-        List<List<Integer>> result = new ArrayList<>();
+
         result.add(missingValues);
         result.add(duplicateValues);
 
@@ -49,3 +52,7 @@ public class MissingAndDuplicate {
         System.out.println(new MissingAndDuplicate().findAllMissingAndDuplicateValues(arr));
     }
 }
+/*
+First loop focus on actual element. checks whether element is at supposed index.
+Second loop focus on index. if index has right elelment. i.e 0 index should have 1 value , 1 index should have 2 value.
+ */
