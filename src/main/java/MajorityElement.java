@@ -3,12 +3,13 @@ public class MajorityElement {
         if(nums.length == 1) 
             return nums[0];
         
-        HashMap<Integer,Integer> map = new HashMap<>();
-        
-        for(int i : nums){
-            if(map.containsKey(i) && map.get(i) + 1 > nums.length / 2)
-                return i;
-            else
+        Map<Integer,Integer> map = new HashMap<>();
+            
+            for(int i : nums){
+
+                if(map.containsKey(i) && map.get(i) + 1 > nums.length / 2)
+                    return i;
+
                 map.put(i,map.getOrDefault(i,0) + 1);
         }
         
