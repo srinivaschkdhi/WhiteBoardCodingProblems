@@ -7,25 +7,29 @@ import java.util.Arrays;
 public class RainWaterBetweenTowers {
 
     public static int getMaxRainWaterBetweenTowers(int[] towerHeights) {
+        int n = height.length;
+        int[] maxSeenRights = new int[n];
         int maxSeenSoFar = 0;
 
-        int[] maxSeenRight = new int[towerHeights.length];
-        int maxSeenLeft = 0;
+        for (int i = n - 1; i >= 0; i--) {
+            if (height[i] > maxSeenSoFar)
+                maxSeenSoFar = height[i];
 
-        int rainwater = 0;
-
-        for (int i = towerHeights.length - 1; i >= 0; i--) {
-
-            if (towerHeights[i] > maxSeenSoFar) {
-                maxSeenSoFar = towerHeights[i];
-
-                maxSeenRight[i] = maxSeenSoFar;
-            }
+            maxSeenRights[i] = maxSeenSoFar;
         }
 
-        System.out.println(Arrays.toString(maxSeenRight));
+        int maxSeenLeft = 0;
+        int rainWater = 0;
 
-        return 0;
+        for (int i = 0; i < n; i++) {
+            if (height[i] > maxSeenLeft)
+                maxSeenLeft = height[i];
+
+            rainWater +=
+                    Math.max(Math.min(maxSeenLeft, maxSeenRights[i]) - height[i], 0);
+        }
+
+        return rainWater;
     }
 
     public static void main(String[] args) {
