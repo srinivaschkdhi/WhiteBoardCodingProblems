@@ -4,6 +4,10 @@ import java.util.List;
 
 public class PascalTriangle {
     public static List<List<Integer>> generate(int numRows) {
+
+        if(numRows == 0)
+            return new ArrayList<>();
+        
         List<List<Integer>> pascalTriangle = new ArrayList<>();
 
         List<Integer> firstRow = new ArrayList<>();
