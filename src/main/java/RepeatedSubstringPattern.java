@@ -1,5 +1,5 @@
 /*
-iven a non-empty string check if it can be constructed by taking a substring of it and appending
+Given a non-empty string check if it can be constructed by taking a substring of it and appending
 multiple copies of the substring together. You may assume the given string consists of lowercase
 English letters only and its length will not exceed 10000.
 
@@ -26,9 +26,9 @@ public class RepeatedSubstringPattern {
         int len = s.length();
 
         for (int i = len / 2; i >= 1; i--) {
-            if (len % i == 0) {
+            if (len % i == 0) {// can ith len substring divide string into equal parts
 
-                int num_repeats = len / i;
+                int num_repeats = len / i;// if it can divide , how many no of parts .
                 String substring = s.substring(0, i);
                 StringBuilder stringBuilder = new StringBuilder();
 
