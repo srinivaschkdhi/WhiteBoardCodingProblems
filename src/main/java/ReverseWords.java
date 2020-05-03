@@ -13,7 +13,7 @@ public class ReverseWords {
         for (int i = str.length() - 1; i >= 0; i--) {
             word = str.charAt(i) + word;
 
-            if ((str.charAt(i) != ' ' && i == 0) || str.charAt(i) != ' ' && str.charAt(i - 1) == ' ') {
+            if ((str.charAt(i) != ' ' && i == 0) || (str.charAt(i) != ' ' && str.charAt(i - 1) == ' ')) {
                 result = result + word;
                 word = "";
             }
@@ -22,7 +22,26 @@ public class ReverseWords {
         System.out.println("result = " + result);
 
         reverseWords("He is very good at programming");
+        reverseWords3("He is very good at programming");
     }
+
+    public static void reverseWords3(String s){
+        String result = "";
+        String word = "";
+
+        for(int i = 0; i < s.length();i++){
+
+            if((s.charAt(i) != ' ' && i == 0) || ( s.charAt(i) != ' ' && s.charAt(i - 1) == ' ')){
+                result = word + result;
+                word = "";
+            }
+
+            word = word + s.charAt(i);
+        }
+
+        System.out.println(word + " " + result);
+    }
+
 
     public static void reverseWords(String str) {
         String result = "";
