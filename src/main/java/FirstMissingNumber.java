@@ -11,7 +11,7 @@ public class FirstMissingNumber {
         int result = -1;
 
         while (low <= high) {
-            int mid = (low + high) / 2;
+            int mid = low + (high - low)/2;
             if (A[mid] == mid + 1) {
                 low = mid + 1;
             } else {
