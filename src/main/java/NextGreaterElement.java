@@ -13,6 +13,7 @@ public class NextGreaterElement {
                 hashMap.put(stack.pop(), num);
             }
          
+            stack.push(num);
 
         }
 
