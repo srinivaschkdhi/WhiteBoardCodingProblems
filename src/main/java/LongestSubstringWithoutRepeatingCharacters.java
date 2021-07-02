@@ -23,3 +23,5 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     }
 }
+// if not present add to hashmap and inc bptr
+//if present remove aptr and inc
