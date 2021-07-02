@@ -14,7 +14,7 @@ public class ReshapeMatrix {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                newShapeMatrix[rNum][cNum] = nums[i][j];
+                newShapeMatrix[rNum][cNum++] = nums[i][j];
                 if (cNum == c) {
                     rNum++;
                     cNum = 0;
