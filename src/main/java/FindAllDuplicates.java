@@ -29,6 +29,21 @@ public class FindAllDuplicates {
         return new ArrayList<>(set);
     }
 
+   public List<Integer> findDuplicates2(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        List<Integer> list = new ArrayList<>();
+        
+        for(int x: nums){
+          
+            boolean is = set.add(x);
+        
+            if(is == false)
+                list.add(x);
+            
+        }
+        
+        return list;
+    }
     public static void main(String[] args) {
         List<Integer> allDuplicates = new FindAllDuplicates().findAllDuplicates(new int[]{4, 2, 2, 1, 2, 4, 1});
         allDuplicates.forEach(System.out::println);
