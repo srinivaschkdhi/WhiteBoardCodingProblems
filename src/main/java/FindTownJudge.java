@@ -32,6 +32,7 @@ public class FindTownJudge {
         return -1;
     }
 
+    //calculate trusts for N people in array. if guy occurs in first place trust decrease by 1, if occurs in second place increases by 1.
     public int findJudge2(int N, int[][] trust) {
         int[] count = new int[N + 1];
         for (int[] t : trust) {
