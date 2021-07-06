@@ -20,7 +20,7 @@ public class ValidPalindrome {
             }
 
             aPointer += 1;
-            bPointer += 1;
+            bPointer -= 1;
         }
 
         return true;
