@@ -3,47 +3,41 @@ import java.util.Stack;
 public class DecodeString {
     public String decodeString(String s) {
         Stack<Integer> countsStack = new Stack<>();
-        Stack<String> trackCharsStack = new Stack<>();
+        Stack<String> stack = new Stack<>();
 
         int index = 0;
-        String trackChars = "";
+        String chars = "";
 
         while (index < s.length()) {
+            char c = s.charAt(index);
 
-
-            if (Character.isDigit(s.charAt(index))) {
-
+            if (Character.isDigit(c)) {
                 int count = 0;
                 while (Character.isDigit(s.charAt(index))) {
                     count = count * 10 + s.charAt(index) - '0';
                     index++;
                 }
-
                 countsStack.push(count);
-
-            } else if (s.charAt(index) == '[') {
-
-                trackCharsStack.push(trackChars);
-                trackChars = "";
+            } else if (c == '[') {
+                stack.push(chars);
+                chars = "";
                 index++;
+            } else if (c == ']') {
+                String prevChars = stack.pop();;
 
-            } else if (s.charAt(index) == ']') {
-
-                StringBuilder sb = new StringBuilder(trackCharsStack.pop());
+                String tmp = "";
                 int count = countsStack.pop();
-
                 for (int i = 0; i < count; i++) {
-                    sb.append(trackChars);
+                    tmp += chars;
                 }
 
-                trackChars = sb.toString();
+                chars = prevChars + tmp;
                 index++;
-
             } else {
-                trackChars += s.charAt(index);
+                chars += s.charAt(index);
                 index++;
             }
         }
-        return trackChars;
+        return chars;
     }
 }
