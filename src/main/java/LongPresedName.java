@@ -1,8 +1,5 @@
 public class LongPresedName {
     public boolean isLongPressedName(String name, String typed) {
-        if (name.length() == typed.length()) {
-            return true;
-        }
         if (name.length() > typed.length()) {
             return false;
         }
