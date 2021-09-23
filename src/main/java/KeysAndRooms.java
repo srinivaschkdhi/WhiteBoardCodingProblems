@@ -62,4 +62,27 @@ public class KeysAndRooms {
 
         return true;
     }
+    
+    ublic boolean canVisitAllRooms3(List<List<Integer>> rooms) {
+        boolean[] visited = new boolean[rooms.size()];
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+
+        while (!stack.isEmpty()) {
+            int key = stack.pop();
+            visited[key] = true;
+
+            List<Integer> keys = rooms.get(key);
+
+            for (int k : keys)
+                if (!visited[k])
+                    stack.push(k);
+        }
+
+        for (boolean visit : visited)
+            if (!visit)
+                return false;
+        return true;
+    }
 }
