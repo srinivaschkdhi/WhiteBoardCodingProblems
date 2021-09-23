@@ -63,7 +63,7 @@ public class KeysAndRooms {
         return true;
     }
     
-    ublic boolean canVisitAllRooms3(List<List<Integer>> rooms) {
+    public boolean canVisitAllRooms3(List<List<Integer>> rooms) {
         boolean[] visited = new boolean[rooms.size()];
 
         Stack<Integer> stack = new Stack<>();
