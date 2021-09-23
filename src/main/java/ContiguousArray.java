@@ -1,6 +1,7 @@
 import java.util.HashMap;
 
 /*Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1*/
+/*find count sum and put countsum and index in hashmap*/
 public class ContiguousArray {
     public int findMaxLen(int[] nums) {
         HashMap<Integer, Integer> counts = new HashMap<>();
