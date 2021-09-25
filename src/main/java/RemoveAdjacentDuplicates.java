@@ -19,6 +19,23 @@ public class RemoveAdjacentDuplicates {
         return new String(stack, 0, i);
     }
 
+   public static String removeDuplicates3(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+            if (!stack.isEmpty() && stack.peek() == c)
+                stack.pop();
+            else
+                stack.push(c);
+        }
+
+        String result = "";
+        while (!stack.isEmpty())
+            result = stack.pop() + result;
+
+        return result;
+    }
+    
     public static String removeDuplicates2(String S) {
         Stack<Character> stack = new Stack<>();
 
@@ -38,6 +55,7 @@ public class RemoveAdjacentDuplicates {
         }
         return str;
     }
+
 
     public static void main(String[] args) {
         String st = removeDuplicates2("aabceec");
