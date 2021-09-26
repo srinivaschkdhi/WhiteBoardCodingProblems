@@ -40,6 +40,36 @@ public class MissingAndDuplicate {
         return result;
     }
 
+        public static List<List<Integer>> findAllMissingAndDuplicateValues2(int[] arr) {
+        if (arr.length == 0)
+            return new ArrayList<>();
+
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> missing = new ArrayList<>();
+        List<Integer> duplicate = new ArrayList<>();
+
+        int i = 0;
+        while(i < arr.length){
+            int num = arr[i];
+            int supposedIndex = num - 1;
+
+            if(arr[supposedIndex] != num){// checking through num
+                swap(arr,i,supposedIndex);
+            }else
+                i++;
+        }
+
+        for(int j = 0; j < arr.length;j++){
+            if(arr[j] != j + 1){ // checking through index
+                missing.add(j + 1);
+                duplicate.add(arr[j]);
+            }
+        }
+
+        result.add(missing);
+        result.add(duplicate);
+        return result;
+    }
 
     public static void swap(int[] A, int i, int j) {
         int x = A[i];
