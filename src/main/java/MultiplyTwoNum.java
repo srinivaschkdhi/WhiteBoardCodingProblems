@@ -6,9 +6,8 @@ import java.util.Arrays;
 
 public class MultiplyTwoNum {
 
-    public String twoMul(String num1,String num2){
-
-        if(num1.equals("0") || num2.equals("0"))
+       public String multiply(String num1, String num2) {
+        if (num1.equals("0") || num2.equals("0"))
             return "0";
 
         int m = num1.length();
@@ -16,19 +15,22 @@ public class MultiplyTwoNum {
 
         int[] result = new int[m + n];
 
+        for (int i = m - 1; i >= 0; i--) {
+            for (int j = n - 1; j >= 0; j--) {
+                int n1 = num1.charAt(i) - '0';
+                int n2 = num2.charAt(j) - '0';
 
-        for(int i = m - 1; i >= 0; i--){
-            for(int j = n - 1 ; j >= 0; j--){
-                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
-                result[i + j + 1]  = result[i + j + 1] + mul % 10;
-                result[i + j] = result[i + j] + mul / 10;
+                int mul = n1 * n2;
+
+                result[i + j + 1] += mul % 10;
+                result[i + j] += mul / 10;
             }
         }
-//        System.out.println(Arrays.toString(result));
-        for(int i = result.length - 1; i >= 1; i--){
+
+        for (int i = result.length - 1; i >= 1; i--) {
             int val = result[i];
             result[i] = val % 10;
-            result[i - 1] = result[i - 1] + (val / 10);
+            result[i - 1] += val / 10;
         }
 
         String res = "";
@@ -36,9 +38,7 @@ public class MultiplyTwoNum {
             res += i;
         }
 
-        res = removePrecedingZeros(res);
-
-        return res;
+        return removePrecedingZeros(res);
     }
 
     private String removePrecedingZeros(String res) {
