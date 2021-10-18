@@ -16,7 +16,7 @@ public class BuddyStrings {
                 uniqChars.add(c);
             }
 
-            if (uniqChars.size() < A.length()) {
+            if (uniqChars.size() < A.length()) {//there should be atleast one duplicate character
                 return true;
             } else {
                 return false;
