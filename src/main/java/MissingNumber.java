@@ -1,5 +1,5 @@
 public class MissingNumber {
-    public int missingNumber(int[] nums) {
+    public int missingNumber1(int[] nums) {
         Set<Integer> set = new HashSet<>();
         
     
@@ -16,7 +16,23 @@ public class MissingNumber {
         return -1;
     }
     
-    public int missingNumber2(int[] nums) {
+       public int missingNumber2(int[] nums) {
+        boolean[] seen = new boolean[nums.length + 1];
+        
+    
+        for(int i: nums){
+            seen[i] = true;
+        }
+        
+        for(int i = 0; i< seen.length;i++){
+           if(seen[i] == false)
+               return i;
+        }
+        
+        return -1;
+    }
+    
+    public int missingNumber3(int[] nums) {
         int sum = 0;
         for(int i:nums)
             sum += i;
@@ -26,7 +42,7 @@ public class MissingNumber {
         return n*(n-1)/2 - sum; // sum of n num is n(n+1)/2. last num should be excluded n-1(n+1-1)/2 = n(n-1)/2
     }
 
-     public int missingNumber2(int[] nums) {
+     public int missingNumber4(int[] nums) {
           int sum = 0;
         for(int i:nums)
             sum += i;
