@@ -22,4 +22,26 @@ public class ShortestSubArrayWithDegree {
 
         return min_length;
     }
+    
+    public int shortestSubArray2(int[] nums) {
+        Map<Integer, Integer> numsCount = new HashMap<>();
+        Map<Integer, Integer> firstSeen = new HashMap<>();
+        int degree = 0;
+        int minLen = Integer.MAX_VALUE;
+
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+
+            firstSeen.putIfAbsent(num, i);
+            numsCount.put(num, numsCount.getOrDefault(num, 0) + 1);
+
+            if (numsCount.get(num) > degree) {
+                degree = numsCount.get(num);
+                minLen = i - firstSeen.get(num) + 1;
+            } else if (numsCount.get(num) == degree)
+                minLen = Math.min(minLen, i - firstSeen.get(num) + 1);
+        }
+        return minLen;
+    }
+    
 }
