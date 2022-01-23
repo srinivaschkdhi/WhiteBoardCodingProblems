@@ -1,5 +1,5 @@
 
-public class MinInRotatedSortedA {
+public class MinInRotatedSortedArray {
     public int findMin(int[] A) {
          if (A == null || A.length == 0)
                 return 0;

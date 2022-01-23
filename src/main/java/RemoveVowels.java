@@ -1,3 +1,5 @@
+import java.util.HashSet;
+import java.util.Set;
 
 public class RemoveVowels {
     public String removeVowels(String S){
@@ -20,7 +22,6 @@ public class RemoveVowels {
             }
         }
         
-       return result;
-      
+       return result.toString();
     }
 }

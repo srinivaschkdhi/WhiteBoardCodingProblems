@@ -10,6 +10,6 @@ public class PaintHouse {
         costs[i][2] += Math.min(costs[i-1][0],costs[i-1][11]);
        }
        
-       return Math.min(costs[n-1][2],(Math.min(costs[n-1][0],costs[n-1][1]));
+       return Math.min(costs[n-1][2],(Math.min(costs[n-1][0],costs[n-1][1])));
       }
     }  

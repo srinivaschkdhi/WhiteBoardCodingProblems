@@ -42,7 +42,7 @@ public class DistanceBetweenBusStops {
         return Math.min(clockWiseDis,totalDis - clockWiseDis);
     }
 
-    public int distanceBetweenBusStops(int[] distance, int start, int destination) {
+    public int distanceBetweenBusStops3(int[] distance, int start, int destination) {
         int clockWiseDis = 0;
         int totalDis = 0;
         

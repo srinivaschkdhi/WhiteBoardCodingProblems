@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class MissingNumber {
     public int missingNumber1(int[] nums) {
         Set<Integer> set = new HashSet<>();

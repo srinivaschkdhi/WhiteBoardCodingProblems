@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class RainWaterBetweenTowers {
 
-    public static int getMaxRainWaterBetweenTowers(int[] towerHeights) {
+    public static int getMaxRainWaterBetweenTowers(int[] height) {
         int n = height.length;
         int[] maxSeenRights = new int[n];
         int maxSeenSoFar = 0;

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class SingleNumberII {
     public int singleNumber(int[] nums) {
         int result = 0;

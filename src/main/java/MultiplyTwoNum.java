@@ -1,12 +1,10 @@
-import java.util.Arrays;
-
 /**
  * @author Srinivas_Chintakindhi
  */
 
 public class MultiplyTwoNum {
 
-       public String multiply(String num1, String num2) {
+    public String multiply(String num1, String num2) {
         if (num1.equals("0") || num2.equals("0"))
             return "0";
 
@@ -44,15 +42,15 @@ public class MultiplyTwoNum {
     private String removePrecedingZeros(String res) {
         int index = 1;
 
-        while(res.startsWith("0")){
-            res = res.substring(index,res.length());
+        while (res.startsWith("0")) {
+            res = res.substring(index, res.length());
             index += 1;
         }
         return res;
     }
 
     public static void main(String[] args) {
-        String s = new MultiplyTwoNum().twoMul("0", "0");
+        String s = new MultiplyTwoNum().multiply("0", "0");
         System.out.println("s = " + s);
     }
 }

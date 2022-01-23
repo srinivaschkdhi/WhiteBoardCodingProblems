@@ -61,7 +61,7 @@ class GenerateParentheses {
 
     public static void main(String[] args) {
         int n = 2;
-        List<String> parentheis = new GenerateParenthesis().generateParentheis(3);
+        List<String> parentheis = new GenerateParentheses().generateParentheis(3);
         parentheis.forEach(System.out::println);
     }
 }

@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class ShortestSubArrayWithDegree {
     public int findShortestSubArray(int[] nums) {

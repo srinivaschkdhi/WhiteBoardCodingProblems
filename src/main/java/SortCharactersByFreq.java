@@ -1,8 +1,13 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 public class SortCharactersByFreq {
     public String frequencySort(String s) {
-       Map<Character, Integer> map = getCharacterIntegerMap(s);
+       Map<Character, Integer> map;
+        map = getCharacterIntegerMap(s);
 
-        PriorityQueue<Character> maxHeap = new PriorityQueue<>((a,b) ->map.get(b) - map.get(a));
+        PriorityQueue<Character> maxHeap = new PriorityQueue<>((a, b) ->map.get(b) - map.get(a));
         maxHeap.addAll(map.keySet());
 
         String result = "";

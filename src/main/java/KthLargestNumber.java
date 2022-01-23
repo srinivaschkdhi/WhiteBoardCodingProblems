@@ -18,7 +18,7 @@ public class KthLargestNumber {
         return minHeap.remove();
     }
 
-     public int findKthLargest(int[] nums, int k) {
+     public int findKthLargest2(int[] nums, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         
         int i  = 0;

@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class FirstUniqueCharacter {
     public int firstUniqChar(String s) {
         Map<Character,Integer> map = new HashMap<>();

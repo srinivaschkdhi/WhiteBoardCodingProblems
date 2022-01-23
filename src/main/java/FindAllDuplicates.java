@@ -13,7 +13,7 @@ import java.util.Set;
  */
 
 public class FindAllDuplicates {
-    public List<Integer> findAllDuplicates(int[] arr) {
+    public List<Integer> findAllDuplicates(int[] nums) {
         Set<Integer> set = new HashSet<>();
 
         for(int x : nums){
