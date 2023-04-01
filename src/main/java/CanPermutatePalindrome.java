@@ -15,6 +15,8 @@ public class CanPermutatePalindrome {
             }
         }
 
-        return numOfCharFrqOdd <= 1;
+        return numOfCharFrqOdd <= 1; 
     }
 }
+
+// Number of characters in the string repeated odd number of times.
