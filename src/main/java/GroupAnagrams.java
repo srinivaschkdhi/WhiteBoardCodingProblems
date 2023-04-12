@@ -28,25 +28,20 @@ public class GroupAnagrams {
 
 
     public List<List<String>> groupAnagram2(String[] strs){
-        List<List<String>> groupedAnagrams = new ArrayList<>();
-        Map<Integer,List<String>> map = new HashMap<>();
+        Map<Integer, List<String>> map = new HashMap<>();
 
+        for (String curr : strs) {
+            int[] char_counts = getCharCount(curr);
 
-        for (String cuur : strs) {
-           int[] char_counts = getCharCount(cuur);
+            int hashKey = Arrays.toString(char_counts).hashCode();
 
+            if (!map.containsKey(hashKey))
+                map.put(hashKey, new ArrayList<>());
 
-           int hashKey = Arrays.toString(char_counts).hashCode();
-
-           if(!map.containsKey(hashKey)){
-                map.put(hashKey,new ArrayList<>());
-            }
-
-            map.get(hashKey).add(cuur);
+            map.get(hashKey).add(curr);
         }
 
-        groupedAnagrams.addAll(map.values());
-        return groupedAnagrams;
+        return new ArrayList<>(map.values());
     }
 
 
