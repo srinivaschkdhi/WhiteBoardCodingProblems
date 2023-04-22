@@ -6,9 +6,9 @@ public class PlusOneSolution {
             if (digits[i] <= 8) {
                 digits[i]++;
                 return digits;
+            }else{
+                digits[i] = 0;
             }
-
-            digits[i] = 0;
         }
 
         int[] newNumber = new int[n + 1];//by default all other values are 0.only need to set first digit
