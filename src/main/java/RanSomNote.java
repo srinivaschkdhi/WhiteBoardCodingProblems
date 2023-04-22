@@ -25,13 +25,12 @@ public class RanSomNote {
                 char_counts[c - 'a']++;
             }
 
-            for(char c : ransomNote.toCharArray())
-                char_counts[c - 'a']--;
-
-            for(int i : char_counts)
-                if(i < 0)
+            for(char c : ransomNote.toCharArray()){
+                if(char_counts[c - 'a'] <= 0)
                     return false;
-
+                
+                char_counts[c - 'a']--;
+            }
 
             return true;
         }
